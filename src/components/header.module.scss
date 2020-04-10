@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 1px solid red;
+    height: 80px;
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            border: 1px solid #000;
+            max-width: 1024px;
+            width: 100%;
+
+            h1 {
+                font-size: 2rem;
+                font-weight: bold;
+            }
+
+            ul {
+                height: 100%;
+                list-style-type: none;
+                display: flex;
+                align-items: center;
+                border: 1px solid green;
+
+                li {
+                    margin: 0;
+                    height: 100%;
+                    padding: 10px;
+                    display: flex;
+                    align-items: center;
+                    border: 1px solid blue;
+                }
+            }
+        }
+
+    
+}
