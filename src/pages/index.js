@@ -2,12 +2,15 @@ import React from 'react'
 
 import Header from '../components/header'
 
-import '../styles/index.scss'
+import { container, header } from './index.module.scss'
+
 
 const BlogIndex = () => {
     return (
-        <div className="container">
-            <Header />
+        <div className={container}>
+            <div className={header}>
+                <Header />
+            </div>
         </div>
     )
 }

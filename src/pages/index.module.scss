@@ -1,0 +1,26 @@
+@import '../styles/index.scss';
+
+.container {
+  height: 100vh;
+}
+
+.header {
+  height: 650px;
+  background-image: url(../../content/assets/office-932926_1920.jpg);
+  background-size: cover;
+
+  header {
+    background: transparent;
+    color: #f0f0f0;
+    
+    li {
+      transition: 0.5s;
+    }
+
+    li:hover {
+      cursor: pointer;
+      border-bottom: 3px solid #fafafa;
+      border-radius: 1px;
+    }
+  }
+}
