@@ -20,6 +20,8 @@
             * {
                 margin:0;
                 padding: 0;
+                text-decoration: none;
+                color: $background;
             }
 
             h1 {
@@ -37,6 +39,7 @@
                     padding: 10px 20px;
                     display: flex;
                     align-items: center;
+                    font-weight: 500;
                 }
             }
         }

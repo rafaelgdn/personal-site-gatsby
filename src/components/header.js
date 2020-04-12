@@ -10,6 +10,7 @@ const Header = () => {
             <nav>
                 <h1>Rafael Carvalho</h1>
                 <ul>
+                    <Link to="/"><li>Início</li></Link>
                     <li>Blog</li>
                     <li>Sobre</li>
                     <li>Contato</li>
