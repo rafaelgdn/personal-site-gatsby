@@ -180,3 +180,40 @@
   }
 }
 
+.blog-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 950px;
+
+  h2 {
+    border: 0;
+    font-size: 38px;
+  }
+
+  hr {
+    height: 6px;
+    width: 40px;
+    background: $primary;
+    border-radius: 10px;
+  }
+}
+
+.blog-context {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 400px;
+  max-width: 1280px;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.projectSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 600px;
+  background: $background;
+}

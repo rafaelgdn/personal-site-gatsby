@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 
 import Header from '../components/header'
+import BlogCard from '../components/blogCard'
 import profilePhoto from '../../content/assets/profilePhoto.jpg'
 
 import {
@@ -12,14 +13,19 @@ import {
     section,
     sectionContext,
     lfDev,
-    divider
+    divider,
+    blogSection,
+    blogContext,
+    projectSection
 } from './index.module.scss'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 
-const BlogIndex = () => {
+const BlogIndex = ({ data }) => {
+    const posts = data.allMarkdownRemark.edges
+
     return (
         <div className={container}>
             <div className={header}>
@@ -71,8 +77,49 @@ const BlogIndex = () => {
                     </div>
                 </div>
             </section>
+            <section className={blogSection}>
+                <h2>Blog</h2>
+                <hr />
+                <div className={blogContext}>
+                    {posts.map(({ node }) => {
+                        return (
+                            <BlogCard
+                                title={node.frontmatter.title}
+                                description={node.excerpt}
+                                img={node.frontmatter.img}
+                                category={node.frontmatter.category}
+                            />     
+                        )
+                    })}
+
+                    
+                    
+
+                </div>
+            </section>
+            <section className={projectSection}>
+
+            </section>
         </div>
     )
 }
 
 export default BlogIndex
+
+export const pageQuery = graphql`
+    query {
+        allMarkdownRemark(limit: 8, sort: {fields: frontmatter___date, order: DESC}) {
+            edges {
+                node {
+                    frontmatter {
+                        category
+                        title
+                        description
+                        img 
+                    }
+                    excerpt(pruneLength: 75)
+                }
+            }
+        }
+    }
+`;
