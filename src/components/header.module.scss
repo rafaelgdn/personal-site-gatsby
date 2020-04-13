@@ -46,3 +46,12 @@
 
     
 }
+
+.active-link {
+    border-bottom: 3px solid $primary;
+    border-radius: 1px;
+
+    li {
+        color: #fff;     
+    }
+}

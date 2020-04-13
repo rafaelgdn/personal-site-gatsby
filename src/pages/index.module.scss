@@ -17,16 +17,12 @@
   header {
     background: transparent;
     color: $background;
-    
-    li {
-      transition: 0.5s;
-    }
 
     li:hover {
       cursor: pointer;
-      border-bottom: 3px solid $primary;
-      border-radius: 1px;
+      background: rgba(0,173,181,0.1);
       color: #fff;
+      font-weight: bold;
     }
   }
 }
@@ -109,3 +105,78 @@
   }
 
 }
+
+.section {
+  height: 400px;
+  background: $background;
+  background-image: url(../../content/assets/bg-chart.png);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.section-context {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1024px;
+  width: 100%;
+
+  div {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    height: 259px;
+
+    h3 {
+      font-weight: 700;
+      font-size: 28px;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 18px;
+      flex-grow: 1;
+    }
+
+    a {
+      :hover {
+        background: $secondary
+      }
+    }
+
+    button {
+      margin-top: 20px;
+      background: $primary;
+      border-radius: 4px;
+      color: $background;
+      font-weight: bold;
+      border: 0;
+      padding: 7px 30px;
+      cursor: pointer;
+    }
+
+  }
+}
+        
+.lf-dev {
+          text-align: right;
+        }
+
+.divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+
+  hr {
+    height: 80px;
+    width: 4px;
+    border-radius: 10px;
+    background: #ccc
+  }
+}
+
