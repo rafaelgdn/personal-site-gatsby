@@ -3,7 +3,7 @@ title: Hello World
 date: "2015-05-01T22:12:03.284Z"
 description: "Hello World"
 category: "Blogging"
-img: ../../content/assets/gatsby-icon.png
+img: desk-1140699_1920.jpg
 ---
 
 This is my first post on my new fake blog! How exciting!

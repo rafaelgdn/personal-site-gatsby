@@ -2,7 +2,7 @@
 title: My Second Post!
 date: "2015-05-06T23:46:37.121Z"
 category: "Desenvolvimento"
-img: ../assets/gatsby-icon.png
+img: gatsby-icon.png
 ---
 
 Wow! I love blogging so much already.

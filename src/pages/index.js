@@ -83,22 +83,20 @@ const BlogIndex = ({ data }) => {
                 <div className={blogContext}>
                     {posts.map(({ node }) => {
                         return (
-                            <BlogCard
+                            <BlogCard key={node.frontmatter.title}
                                 title={node.frontmatter.title}
                                 description={node.excerpt}
-                                img={node.frontmatter.img}
+                                imgPage={node.frontmatter.img}
                                 category={node.frontmatter.category}
                             />     
                         )
-                    })}
-
-                    
-                    
-
+                    })}                
                 </div>
             </section>
             <section className={projectSection}>
-
+                    <h2>Projetos</h2>
+                    <hr />
+                    
             </section>
         </div>
     )

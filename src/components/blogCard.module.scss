@@ -5,17 +5,15 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  background: #fafafa;
   border-radius: 4px;
   width: 300px;
   height: 350px;
   position: relative;
-  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
-  margin: 0px 10px 20px 10px;
+  // box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+  margin: 0px 10px 50px 10px;
 
   :hover {
     cursor: pointer;
-    opacity: 0.05;
   }
 
   * {
@@ -30,6 +28,11 @@
     padding-bottom: 20px;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+
+    :hover {
+      filter: brightness(0.2) !important;
+    }
+
   }
 
   h4 {
@@ -47,7 +50,7 @@
     text-align: center;
     z-index: 10;
     border-radius: 4px;
-    background: $secondary;
+    background: rgba(57,62,70,0.8);
     color: #fff;
     font-weight: 600;
     font-size: 14px;
@@ -56,18 +59,9 @@
     left: 0;
     margin: 5px 0px 0px 5px;
   }
+}
 
-  div {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: .5s ease;
-    background-color: #000;
-    z-index: 20;
-  }
+.card:hover {
+  filter: brightness(0.95);
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);  
 }
