@@ -2,18 +2,18 @@ import React from 'react'
 import {StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import { card } from './blogCard.module.scss'
+import { card } from './projectCard.module.scss'
 
-const BlogCard = ({title, description, imgPage, category}) => {
-    return (
-        <div className={card}>
-          <StaticQuery
+const ProjectCard = ({title, description, imgPage}) => {
+  return (
+    <div className={card}>
+      <StaticQuery
             query={graphql`
               query {
                 allImageSharp {
                   edges {
                     node {
-                      fixed(width: 300, height: 200) {
+                      fixed(width: 250, height: 200) {
                         ...GatsbyImageSharpFixed
                         originalName
                       }
@@ -32,11 +32,14 @@ const BlogCard = ({title, description, imgPage, category}) => {
               return <Img fixed={image.node.fixed} />
             }}
           />
-          <h4>{title}</h4>
-          <p>{description}</p>
-          <span>{category}</span>
-        </div>
-    )
+          <div>
+            <h4>{title}</h4>
+            <p>{description}</p>
+          </div>
+            
+          
+    </div>
+  )
 }
 
-export default BlogCard
+export default ProjectCard

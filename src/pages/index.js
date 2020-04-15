@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby'
 
 import Header from '../components/header'
 import BlogCard from '../components/blogCard'
+import ProjectCard from '../components/projectCard'
 import profilePhoto from '../../content/assets/profilePhoto.jpg'
 
 import {
@@ -16,7 +17,8 @@ import {
     divider,
     blogSection,
     blogContext,
-    projectSection
+    projectSection,
+    projectContext
 } from './index.module.scss'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -96,7 +98,22 @@ const BlogIndex = ({ data }) => {
             <section className={projectSection}>
                     <h2>Projetos</h2>
                     <hr />
-                    
+                    <div className={projectContext}>
+                        <ProjectCard 
+                            title="GoBarber - Bootcamp GoStack, Rocketseat"
+                            description="Aplicação para marcação de agendamentos de uma barbearia, foi criada durante o Bootcamp GoStack 8.0 da rocketseat."
+                            imgPage="gobarber.png"
+                        />
+                        <ProjectCard 
+                            title="Eletrônica do João - Assitência Técnica"
+                            description="Aplicação para cadastro e controle de ordens de serviço, estoque e peças de uma assistência técnica."
+                            imgPage="eletronicadojoao.jpg"
+                        />
+                        
+                    </div>
+                        <Link to="/">
+                            <button>Veja mais...</button>
+                        </Link>
             </section>
         </div>
     )

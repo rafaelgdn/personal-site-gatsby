@@ -210,10 +210,67 @@
   margin-bottom: 50px;
 }
 
-.projectSection {
+
+
+.project-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 600px;
   background: $background;
+  padding-bottom: 50px;
+
+  h2 {
+    border: 0;
+    font-size: 38px;
+  }
+
+  hr {
+    height: 6px;
+    width: 40px;
+    background: $primary;
+    border-radius: 10px;
+  }
+
+  a {
+    :hover {
+    background: $secondary;
+  }
+
+  }
+
+  button {
+    background: $primary;
+    border-radius: 4px;
+    color: $background;
+    font-weight: bold;
+    border: 0;
+    padding: 7px 30px;
+    cursor: pointer;
+  }
+}
+
+
+
+.project-context {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 780px;
+  margin: 50px 10px 50px 10px;
+  height: 450px;
+  
+  div {
+    transition: 0.5s;
+  }
+
+}
+
+.project-context:hover div {
+  opacity: 0.8;
+}
+
+.project-context div:hover {
+  opacity: 1;
 }
