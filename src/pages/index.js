@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby'
 import Header from '../components/header'
 import BlogCard from '../components/blogCard'
 import ProjectCard from '../components/projectCard'
+import Footer from '../components/footer'
 import profilePhoto from '../../content/assets/profilePhoto.jpg'
 
 import {
@@ -18,7 +19,8 @@ import {
     blogSection,
     blogContext,
     projectSection,
-    projectContext
+    projectContext,
+    btnHover
 } from './index.module.scss'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -90,6 +92,7 @@ const BlogIndex = ({ data }) => {
                                 description={node.excerpt}
                                 imgPage={node.frontmatter.img}
                                 category={node.frontmatter.category}
+                                slug={node.fields.slug}
                             />     
                         )
                     })}                
@@ -99,22 +102,27 @@ const BlogIndex = ({ data }) => {
                     <h2>Projetos</h2>
                     <hr />
                     <div className={projectContext}>
+                        <a href="https://github.com">
                         <ProjectCard 
                             title="GoBarber - Bootcamp GoStack, Rocketseat"
                             description="Aplicação para marcação de agendamentos de uma barbearia, foi criada durante o Bootcamp GoStack 8.0 da rocketseat."
                             imgPage="gobarber.png"
                         />
+                        </a>
+                        <a href="https://github.com">
                         <ProjectCard 
                             title="Eletrônica do João - Assitência Técnica"
                             description="Aplicação para cadastro e controle de ordens de serviço, estoque e peças de uma assistência técnica."
                             imgPage="eletronicadojoao.jpg"
                         />
+                        </a>
                         
                     </div>
-                        <Link to="/">
+                        <Link to="/" className={btnHover}>
                             <button>Veja mais...</button>
                         </Link>
             </section>
+            <Footer />
         </div>
     )
 }
@@ -123,6 +131,11 @@ export default BlogIndex
 
 export const pageQuery = graphql`
     query {
+        site {
+            siteMetadata {
+                title
+            }
+        }
         allMarkdownRemark(limit: 8, sort: {fields: frontmatter___date, order: DESC}) {
             edges {
                 node {
@@ -133,6 +146,9 @@ export const pageQuery = graphql`
                         img 
                     }
                     excerpt(pruneLength: 75)
+                    fields {
+                        slug
+                    }
                 }
             }
         }

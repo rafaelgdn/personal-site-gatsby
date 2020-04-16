@@ -1,11 +1,12 @@
 import React from 'react'
-import {StaticQuery, graphql } from 'gatsby'
+import {StaticQuery, graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 
 import { card } from './blogCard.module.scss'
 
-const BlogCard = ({title, description, imgPage, category}) => {
+const BlogCard = ({title, description, imgPage, category, slug}) => {
     return (
+      <Link to={slug}>
         <div className={card}>
           <StaticQuery
             query={graphql`
@@ -36,6 +37,7 @@ const BlogCard = ({title, description, imgPage, category}) => {
           <p>{description}</p>
           <span>{category}</span>
         </div>
+      </Link>
     )
 }
 

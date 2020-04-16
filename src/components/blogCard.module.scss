@@ -28,11 +28,6 @@
     padding-bottom: 20px;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
-
-    :hover {
-      filter: brightness(0.2) !important;
-    }
-
   }
 
   h4 {
@@ -59,9 +54,4 @@
     left: 0;
     margin: 5px 0px 0px 5px;
   }
-}
-
-.card:hover {
-  filter: brightness(0.95);
-  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);  
 }
