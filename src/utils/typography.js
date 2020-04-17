@@ -9,7 +9,7 @@ Github.overrideThemeStyles = () => {
   }
 }
 
-// delete Wordpress2016.googleFonts
+delete Github.googleFonts
 
 const typography = new Typography(Github)
 
