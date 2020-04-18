@@ -9,7 +9,7 @@ import Footer from "../components/footer"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock } from '@fortawesome/free-regular-svg-icons'
 
-import { blogPost, headerContainer, blogTitle, headerLinks, blogSection } from './blog-post.module.scss'
+import { blogPost, headerContainer, blogTitle, headerLinks, blogSection, navSection, linkHover } from './blog-post.module.scss'
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -41,7 +41,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       </div>
       <article>
         <section className={blogSection} dangerouslySetInnerHTML={{ __html: post.html }} />
-        <nav>
+        <nav className={navSection}>
           <ul
             style={{
               display: `flex`,
@@ -51,14 +51,14 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               padding: 0,
             }}
           >
-            <li>
+            <li className={linkHover}>
               {previous && (
                 <Link to={previous.fields.slug} rel="prev">
                   ← {previous.frontmatter.title}
                 </Link>
               )}
             </li>
-            <li>
+            <li className={linkHover}>
               {next && (
                 <Link to={next.fields.slug} rel="next">
                   {next.frontmatter.title} →
